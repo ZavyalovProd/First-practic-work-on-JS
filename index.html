@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header></header>
+    <main class="main">
+      <div class="main__input">
+        <h1 class="main__title">Добавь свою идею!</h1>
+        <input
+          class="input_add_card_title"
+          type="text"
+          placeholder="Заголовок"
+        />
+        <input
+          class="input_add_card_description"
+          type="text"
+          placeholder="Описание"
+        />
+        <div class="buttons">
+          <button class="input_button">Добавить</button>
+          <button class="input__clear_button">Очистить</button>
+        </div>
+      </div>
+      <ul class="main__ul"></ul>
+    </main>
+    <footer class="footer">
+      <h3 class="footer__title">Zavyalov</h3>
+    </footer>
+    <template id="card_example">
+      <li class="main__li">
+        <h2 class="ul__title"></h2>
+        <p class="ul__text"></p>
+        <button class="like"></button>
+        <button class="delete_card_button"></button>
+      </li>
+    </template>
+    <script src="/scripts/index.js"></script>
+  </body>
+</html>

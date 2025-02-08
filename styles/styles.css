@@ -1,0 +1,187 @@
+@font-face {
+  font-family: "nunito";
+  src: url(/assets/fonts/Nunito/Nunito-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: "Dancing";
+  src: url(/assets/fonts/DancingScript-Regular.ttf);
+}
+
+body {
+  background-color: rgb(48, 48, 48);
+  padding: 0;
+  margin: 0;
+}
+
+.main__title {
+  color: white;
+  font-family: "nunito";
+  text-align: center;
+}
+
+.main__input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.input_add_card_title {
+  margin: 5px;
+  margin-top: 0;
+  font-family: "nunito";
+  padding: 10px;
+  outline: none;
+  border-radius: 10px;
+  width: 17vw;
+  border: none;
+}
+
+.input_add_card_description {
+  margin: 5px;
+  margin-top: 0;
+  font-family: "nunito";
+  padding: 10px;
+  margin-bottom: 20px;
+  outline: none;
+  border-radius: 10px;
+  width: 17vw;
+  border: none;
+}
+
+.ul__text {
+  text-align: left;
+}
+
+.like {
+  background-image: url(/assets/icons/like.png);
+  background-color: rgb(48, 48, 48);
+  width: 50px;
+  height: 50px;
+  border: none;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.delete_card_button {
+  background-image: url(/assets/icons/cross.png);
+  background-color: rgb(48, 48, 48);
+  width: 60px;
+  height: 50px;
+  border: none;
+  margin: 10px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.like_active {
+  background-image: url(/assets/icons/like_active.png);
+  background-size: 50px;
+}
+
+.input_add_card_title:focus {
+  outline: none;
+  box-shadow: #ff006a 0px 0px 6px;
+  border: 1px solid #ff006a;
+}
+
+.input_add_card_title:valid {
+  color: #ff006a;
+}
+
+.input_add_card_description:focus {
+  outline: none;
+  box-shadow: #ff006a 0px 0px 6px;
+  border: 1px solid #ff006a;
+}
+
+.input_add_card_description:valid {
+  color: #ff006a;
+}
+
+.input_button {
+  background-color: rgb(48, 48, 48);
+  padding: 10px;
+  border: 3px solid rgb(255, 255, 255);
+  color: white;
+  font-family: "nunito";
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.input_button:hover {
+  box-shadow: 0 0 20px rgb(136, 11, 73);
+}
+
+.input__clear_button {
+  background-color: rgb(48, 48, 48);
+  padding: 10px;
+  border: 3px solid rgb(255, 255, 255);
+  color: white;
+  font-family: "nunito";
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+  margin-left: 10px;
+}
+
+.input__clear_button:hover {
+  box-shadow: 0 0 20px rgb(136, 11, 73);
+}
+
+.buttons {
+  margin: 10px;
+}
+
+.ul__title {
+  margin-top: 0;
+  color: white;
+  list-style: none;
+}
+
+.main__ul {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.main__li {
+  padding: 20px;
+  margin-bottom: 15px;
+  font-family: "nunito";
+  color: white;
+  text-align: center;
+  border-radius: 15px;
+  border: 3px solid rgb(90, 0, 39);
+  transition: 1s;
+  width: 300px;
+}
+
+.main__li:hover {
+  box-shadow: 0 0 15px rgb(136, 11, 73);
+}
+
+.main__li_active {
+  box-shadow: 0 0 15px rgb(127, 255, 127);
+  border: 3px solid rgb(127, 255, 127);
+}
+
+.footer__title {
+  font-family: "Dancing";
+  color: white;
+  text-align: center;
+  font-size: 40px;
+}
+
+.footer {
+  height: 100px;
+}

@@ -1,11 +1,11 @@
 @font-face {
   font-family: "nunito";
-  src: url(/assets/fonts/Nunito/Nunito-VariableFont_wght.ttf);
+  src: url(../assets/fonts/Nunito/Nunito-VariableFont_wght.ttf)
 }
 
 @font-face {
   font-family: "Dancing";
-  src: url(/assets/fonts/DancingScript-Regular.ttf);
+  src: url(../assets/fonts/DancingScript-Regular.ttf);
 }
 
 body {
@@ -55,7 +55,7 @@ body {
 }
 
 .like {
-  background-image: url(/assets/icons/like.png);
+  background-image: url(../assets/icons/like.png);
   background-color: rgb(48, 48, 48);
   width: 50px;
   height: 50px;
@@ -67,7 +67,7 @@ body {
 }
 
 .delete_card_button {
-  background-image: url(/assets/icons/cross.png);
+  background-image: url(../assets/icons/cross.png);
   background-color: rgb(48, 48, 48);
   width: 60px;
   height: 50px;
@@ -79,7 +79,7 @@ body {
 }
 
 .like_active {
-  background-image: url(/assets/icons/like_active.png);
+  background-image: url(../assets/icons/like_active.png);
   background-size: 50px;
 }
 

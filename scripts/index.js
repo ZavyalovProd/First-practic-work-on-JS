@@ -107,8 +107,7 @@ function addInputButton() {
       return;
     }
 
-    const template = page.querySelector("#card_example");
-    const cardClone = template.content.cloneNode(true);
+    const cardClone = cardExample.content.cloneNode(true);
     cardClone.querySelector(".ul__title").textContent = title;
     cardClone.querySelector(".ul__text").textContent = description;
 

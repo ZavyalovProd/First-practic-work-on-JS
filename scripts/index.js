@@ -55,71 +55,89 @@ const page = document.querySelector("body");
 const cardExample = page.querySelector("#card_example").content;
 const cardList = page.querySelector(".main__ul");
 
-cards.forEach((card) => {
+function createCard(card) {
   const newCard = cardExample.cloneNode(true);
   const title = newCard.querySelector(".ul__title");
   const text = newCard.querySelector(".ul__text");
   title.textContent = card.title;
   text.textContent = card.description;
   cardList.appendChild(newCard);
-});
+}
+cards.forEach(createCard);
 
-const likeButtons = page.querySelectorAll(".like");
-const cardItems = page.querySelectorAll(".main__li");
+function likeOnButton() {
+  const likeButton = page.querySelectorAll(".like");
+  const cardItems = page.querySelectorAll(".main__li");
 
-likeButtons.forEach((likeButton, everyCard) => {
-  const cardItem = cardItems[everyCard];
-  likeButton.addEventListener("click", function () {
-    likeButton.classList.toggle("like_active");
-    cardItem.classList.toggle("main__li_active");
+  likeButton.forEach((likeButton, everyCard) => {
+    const cardItem = cardItems[everyCard];
+    likeButton.addEventListener("click", function () {
+      likeButton.classList.toggle("like_active");
+      cardItem.classList.toggle("main__li_active");
+    });
   });
-});
+}
 
-const deleteButtons = page.querySelectorAll(".delete_card_button");
+likeOnButton();
 
-deleteButtons.forEach((button) => {
-  button.addEventListener("click", function () {
-    button.closest(".main__li").remove();
+function deleteButton() {
+  const deleteButtons = page.querySelectorAll(".delete_card_button");
+
+  deleteButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      button.closest(".main__li").remove();
+    });
   });
-});
+}
 
-page.querySelector(".input_button").addEventListener("click", function () {
-  const title = page.querySelector(".input_add_card_title").value;
-  const description = page.querySelector(".input_add_card_description").value;
+deleteButton();
 
-  if (title === "" || description === "") {
-    alert("Заполни поля!");
-    return;
-  }
+function addInputButton() {
+  page.querySelector(".input_button").addEventListener("click", function () {
+    const title = page.querySelector(".input_add_card_title").value;
+    const description = page.querySelector(".input_add_card_description").value;
 
-  if (title.length > 100 || description.length > 100) {
-    alert("Длина не должна превышать 100 символов!");
-    return;
-  }
+    if (title === "" || description === "") {
+      alert("Заполни поля!");
+      return;
+    }
 
-  const template = page.querySelector("#card_example");
-  const cardClone = template.content.cloneNode(true);
-  cardClone.querySelector(".ul__title").textContent = title;
-  cardClone.querySelector(".ul__text").textContent = description;
+    if (title.length > 100 || description.length > 100) {
+      alert("Длина не должна превышать 100 символов!");
+      return;
+    }
 
-  const likeButton = cardClone.querySelector(".like");
-  const deleteButton = cardClone.querySelector(".delete_card_button");
-  const cardBorder = cardClone.querySelector(".main__li");
+    const template = page.querySelector("#card_example");
+    const cardClone = template.content.cloneNode(true);
+    cardClone.querySelector(".ul__title").textContent = title;
+    cardClone.querySelector(".ul__text").textContent = description;
 
-  likeButton.addEventListener("click", function () {
-    likeButton.classList.toggle("like_active");
-    cardBorder.classList.toggle("main__li_active");
+    const likeButton = cardClone.querySelector(".like");
+    const deleteButton = cardClone.querySelector(".delete_card_button");
+    const card = cardClone.querySelector(".main__li");
+
+    likeButton.addEventListener("click", function () {
+      likeButton.classList.toggle("like_active");
+      card.classList.toggle("main__li_active");
+    });
+
+    deleteButton.addEventListener("click", function () {
+      deleteButton.closest(".main__li").remove();
+    });
+
+    page.querySelector(".main__ul").appendChild(cardClone);
+    page.querySelector(".input_add_card_title").value = "";
+    page.querySelector(".input_add_card_description").value = "";
   });
+}
 
-  deleteButton.addEventListener("click", function () {
-    deleteButton.closest(".main__li").remove();
+addInputButton();
+
+function deleteCards() {
+  const ClearButton = page.querySelector(".input__clear_button");
+  ClearButton.addEventListener("click", function () {
+    page.querySelectorAll(".main__li").forEach((card) => card.remove());
   });
-  page.querySelector(".main__ul").appendChild(cardClone);
-  page.querySelector(".input_add_card_title").value = "";
-  page.querySelector(".input_add_card_description").value = "";
-});
+}
 
-const ClearButton = page.querySelector(".input__clear_button");
-ClearButton.addEventListener("click", function () {
-  page.querySelectorAll(".main__li").forEach((card) => card.remove());
-});
+deleteCards();
